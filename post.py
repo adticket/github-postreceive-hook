@@ -27,7 +27,7 @@ def application(environ, start_response):
             # payloadJson = ''.join(d.get('payload'))
             # payload = json.loads(payloadJson)
         
-            subprocess.call(['git', 'pull'], cwd=os.path.join(os.path.dirname(environ['SCRIPT_FILENAME']), '..' + os.sep))
+            subprocess.call(['/bin/bash', 'postreceive.sh'], cwd=os.path.join(os.path.dirname(environ['SCRIPT_FILENAME']), '..' + os.sep))
         
         status = '200 OK'
         output = "Thank you very much.\n"
